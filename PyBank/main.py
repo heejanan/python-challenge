@@ -22,14 +22,14 @@ with open ("Resources/budget_data.csv","r") as budgetdata:
         curr_month_profitloss=int(row[1])
         total_profitloss += curr_month_profitloss
 
-    if (total_months == 1): 
-        prev_month_profitloss = curr_month_profitloss
+        if (total_months == 1): 
+            prev_month_profitloss = curr_month_profitloss
 
-    else:
-        profitloss_change = curr_month_profitloss - prev_month_profitloss
-        months.append(row[0])
-        profitloss_changes.append(profitloss_change)
-        prev_month_profitloss=curr_month_profitloss
+        else:
+            profitloss_change = curr_month_profitloss - prev_month_profitloss
+            months.append(row[0])
+            profitloss_changes.append(profitloss_change)
+            prev_month_profitloss=curr_month_profitloss
 
 #The net total amount of "Profit/Losses" over the entire period
     net_profitloss = sum(profitloss_changes)
